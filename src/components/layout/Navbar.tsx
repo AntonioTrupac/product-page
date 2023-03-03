@@ -1,6 +1,7 @@
 import Image from "next/image";
 import classes from "./Navbar.module.scss";
 import Link from "next/link";
+import { Cart } from "../icons";
 
 const Navbar = () => {
   return (
@@ -40,13 +41,10 @@ const Navbar = () => {
       </div>
 
       <div className={classes.info}>
-        <Image
-          className={classes.cart}
-          width={22}
-          height={20}
-          src="/images/icon-cart.svg"
-          alt="cart"
-        />
+        <button className={classes["cart-button"]}>
+          <Cart width={22} height={20} className={classes["cart-icon"]} />
+        </button>
+
         <Image
           height={50}
           width={50}

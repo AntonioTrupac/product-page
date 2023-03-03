@@ -56,8 +56,23 @@
     display: flex;
     align-items: center;
 
-    .cart {
+    .cart-button {
       margin-right: 3rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      & .cart-icon {
+        color: $neutral-dark-grayish;
+      }
+
+      &:hover,
+      &:active {
+        & .cart-icon {
+          color: $neutral-black;
+        }
+      }
     }
   }
 }

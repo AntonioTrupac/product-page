@@ -16,21 +16,25 @@ const Navbar = () => {
                 Collections
               </Link>
             </li>
+
             <li className={classes["navigation--item"]}>
               <Link className={classes["navigation--link"]} href="#">
                 Men
               </Link>
             </li>
+
             <li className={classes["navigation--item"]}>
               <Link className={classes["navigation--link"]} href="#">
                 Women
               </Link>
             </li>
+
             <li className={classes["navigation--item"]}>
               <Link className={classes["navigation--link"]} href="#">
                 About
               </Link>
             </li>
+
             <li className={classes["navigation--item"]}>
               <Link className={classes["navigation--link"]} href="#">
                 Contact

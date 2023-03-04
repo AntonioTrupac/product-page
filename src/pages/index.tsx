@@ -1,7 +1,7 @@
+import { ImageSection } from "@/components";
+import { images } from "../data/images";
+import classes from "./Index.module.scss";
 import Head from "next/head";
-import { Kumbh_Sans } from "next/font/google";
-
-const kumbh = Kumbh_Sans({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -12,11 +12,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={kumbh.className}>
-        <div>
-          <h1>Hello World</h1>
-        </div>
-      </main>
+
+      <section className={classes.container}>
+        <ImageSection images={images} />
+      </section>
     </>
   );
 }

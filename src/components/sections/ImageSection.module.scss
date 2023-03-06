@@ -28,7 +28,11 @@
       width: 88px;
       height: 88px;
 
-      &:hover {
+      &:hover,
+      &:focus {
+        border: 2px solid transparent;
+        outline: transparent;
+
         img {
           border: 2px solid $primary-orange;
         }

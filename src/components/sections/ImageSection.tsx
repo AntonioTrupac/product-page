@@ -17,10 +17,8 @@ const ImageSection = ({ images }: ImageSectionProps) => {
 
   const mainImage = images.find((image) => image.id === imageId);
 
-  const isMainImage = mainImage && images.includes(mainImage);
-
   return (
-    <div className={classes.wrapper}>
+    <section className={classes.wrapper}>
       {mainImage && (
         <div className={classes["wrapper__main-image"]}>
           <Image src={mainImage.src} width={445} height={445} alt="" />
@@ -44,7 +42,7 @@ const ImageSection = ({ images }: ImageSectionProps) => {
           </button>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

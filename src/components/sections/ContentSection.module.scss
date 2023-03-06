@@ -1,0 +1,89 @@
+@import "../../styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 3.875rem 0;
+
+  h1 {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    line-height: 1rem;
+    font-weight: 700;
+
+    color: $primary-orange;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-size: 2.75rem;
+    letter-spacing: 0;
+    line-height: 3rem;
+    font-weight: 700;
+
+    margin-top: 0;
+    text-transform: capitalize;
+  }
+
+  &__description {
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: 1.625rem;
+    letter-spacing: 0;
+    font-weight: 400;
+
+    color: $neutral-dark-grayish;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  &__pricing {
+    .discount-pricing-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.625rem;
+
+      &__discounted {
+        font-size: 1.75rem;
+        letter-spacing: 0;
+        line-height: 2.188rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      &__discount {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.25rem;
+
+        background-color: #ffeee2;
+        color: $primary-orange;
+
+        padding-inline: 0.5rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.188rem;
+        border-radius: 0.375rem;
+        margin-inline: 1rem;
+        margin-block: 0;
+      }
+    }
+
+    .pricing-container {
+      font-size: 1rem;
+      letter-spacing: 0;
+      line-height: 1.625rem;
+      font-weight: 700;
+      margin: 0;
+
+      s {
+        color: $neutral-grayish;
+      }
+    }
+  }
+}

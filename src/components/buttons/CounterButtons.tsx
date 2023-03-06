@@ -1,22 +1,32 @@
-import { useState } from "react";
+import { Decrement, Increment } from "../icons";
+import classes from "./CounterButtons.module.scss";
 
-const CounterButtons = () => {
-  const [count, setCount] = useState(0);
+interface CounterButtonsProps {
+  count: number;
+  increment: () => void;
+  decrement: () => void;
+}
 
-  const increment = () => {
-    setCount((count) => count + 1);
-  };
-
-  const decrement = () => {
-    if (count <= 0) return;
-    setCount((count) => count - 1);
-  };
-
+const CounterButtons = ({
+  count,
+  increment,
+  decrement,
+}: CounterButtonsProps) => {
   return (
-    <div>
-      <button onClick={decrement}>-</button>
-      <span>{count}</span>
-      <button onClick={increment}>+</button>
+    <div className={classes["counter-wrapper"]}>
+      <button
+        onClick={decrement}
+        className={classes["counter-wrapper__decrement"]}
+      >
+        <Decrement />
+      </button>
+      <span className={classes["counter-wrapper__count"]}>{count}</span>
+      <button
+        onClick={increment}
+        className={classes["counter-wrapper__increment"]}
+      >
+        <Increment />
+      </button>
     </div>
   );
 };

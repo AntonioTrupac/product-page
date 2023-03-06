@@ -1,7 +1,19 @@
+import { useState } from "react";
 import { CounterButtons } from "../buttons";
 import classes from "./ContentSection.module.scss";
 
 const ContentSection = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const decrement = () => {
+    if (count <= 0) return;
+    setCount((prevCount) => prevCount - 1);
+  };
+
   return (
     <section className={classes.wrapper}>
       <h1 className="">Sneaker company</h1>
@@ -27,7 +39,13 @@ const ContentSection = () => {
         </p>
       </div>
 
-      <CounterButtons />
+      <div>
+        <CounterButtons
+          count={count}
+          increment={increment}
+          decrement={decrement}
+        />
+      </div>
     </section>
   );
 };

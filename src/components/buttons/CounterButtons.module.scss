@@ -1,1 +1,45 @@
 @import "../../styles/variables";
+
+.counter-wrapper {
+  display: inline-flex;
+  align-items: center;
+  background-color: $neutral-light-grayish;
+  padding-inline: 1rem;
+  padding-block: 1.125rem;
+  border-radius: 0.625rem;
+
+  &__decrement {
+    display: flex;
+    padding: 0;
+    background-color: transparent;
+    color: $primary-orange;
+    border: none;
+
+    &:hover,
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &__increment {
+    display: flex;
+    padding: 0;
+    background-color: transparent;
+    color: $primary-orange;
+    border: none;
+
+    &:hover,
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &__count {
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: 1.625rem;
+    font-weight: 700;
+    margin-inline: 2.875rem;
+    margin-block: 0;
+  }
+}

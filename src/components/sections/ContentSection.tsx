@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CounterButtons } from "../buttons";
 import classes from "./ContentSection.module.scss";
+import CartButton from "../buttons/CartButton";
 
 const ContentSection = () => {
   const [count, setCount] = useState(0);
@@ -39,12 +40,14 @@ const ContentSection = () => {
         </p>
       </div>
 
-      <div>
+      <div className={classes["wrapper__buttons"]}>
         <CounterButtons
           count={count}
           increment={increment}
           decrement={decrement}
         />
+
+        <CartButton onClick={() => console.log("CLICK ME")} />
       </div>
     </section>
   );

@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-grow: 1;
+
+  background-color: $primary-orange;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  color: $neutral-white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+
+  svg {
+    margin-top: -3px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.9;
+  }
+}

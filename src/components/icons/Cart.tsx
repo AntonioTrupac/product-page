@@ -1,6 +1,6 @@
 const Cart = ({
-  width = 40,
-  height = 17,
+  width = 22,
+  height = 20,
   ...props
 }: React.SVGProps<SVGSVGElement>) => {
   return (
@@ -8,6 +8,7 @@ const Cart = ({
       width={width}
       height={height}
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 22 20"
       {...props}
     >
       <path

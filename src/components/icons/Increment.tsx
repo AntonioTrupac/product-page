@@ -16,7 +16,7 @@ const Increment = ({
           id="b"
         />
       </defs>
-      <use fill="currentColor" fill-rule="nonzero" xlinkHref="#b" />
+      <use fill="currentColor" fillRule="nonzero" xlinkHref="#b" />
     </svg>
   );
 };

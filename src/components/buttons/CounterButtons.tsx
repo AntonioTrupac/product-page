@@ -1,5 +1,5 @@
-import { Decrement, Increment } from "../icons";
-import classes from "./CounterButtons.module.scss";
+import { Decrement, Increment } from '../icons';
+import classes from './CounterButtons.module.scss';
 
 interface CounterButtonsProps {
   count: number;
@@ -13,17 +13,17 @@ const CounterButtons = ({
   decrement,
 }: CounterButtonsProps) => {
   return (
-    <div className={classes["counter-wrapper"]}>
+    <div className={classes['counter-wrapper']}>
       <button
         onClick={decrement}
-        className={classes["counter-wrapper__decrement"]}
+        className={classes['counter-wrapper__decrement']}
       >
         <Decrement />
       </button>
-      <span className={classes["counter-wrapper__count"]}>{count}</span>
+      <span className={classes['counter-wrapper__count']}>{count}</span>
       <button
         onClick={increment}
-        className={classes["counter-wrapper__increment"]}
+        className={classes['counter-wrapper__increment']}
       >
         <Increment />
       </button>

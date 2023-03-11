@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { CounterButtons } from '../buttons';
+import { CounterButtons, CartButton } from '@/components';
 import classes from './ContentSection.module.scss';
-import CartButton from '../buttons/CartButton';
-import { useCartStore } from '@/store/cart';
+import { CartItem, useCartStore } from '@/store/cart';
 
 const ContentSection = () => {
   const store = useCartStore();
@@ -46,6 +45,15 @@ const ContentSection = () => {
     }
   };
 
+  const handleCart = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    item: CartItem
+  ) => {
+    e.preventDefault();
+    store.addItem(item);
+    setCount(0);
+  };
+
   return (
     <section className={classes.wrapper}>
       <h1 className=''>Sneaker company</h1>
@@ -78,7 +86,7 @@ const ContentSection = () => {
           decrement={decrement}
         />
 
-        <CartButton onClick={() => store.addItem(item)} disabled={count < 1} />
+        <CartButton onClick={(e) => handleCart(e, item)} disabled={count < 1} />
       </div>
     </section>
   );

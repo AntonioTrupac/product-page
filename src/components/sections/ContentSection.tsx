@@ -9,7 +9,7 @@ const ContentSection = () => {
   const [count, setCount] = useState(0);
   const [item, setItem] = useState({
     id: '1',
-    name: 'Sneakers',
+    name: 'Fall Limited Edition Sneakers',
     price: 250,
     discount: 50,
     discountedPrice: 125,

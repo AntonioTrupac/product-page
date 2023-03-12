@@ -11,7 +11,6 @@ export type CartItem = {
 };
 
 type CartState = {
-  item: Record<string, CartItem>;
   items: CartItem[];
   total: number;
   quantity: number;
@@ -21,7 +20,6 @@ type CartState = {
 };
 
 export const useCartStore = create<CartState>((set) => ({
-  item: {},
   items: [],
   total: 0,
   quantity: 0,

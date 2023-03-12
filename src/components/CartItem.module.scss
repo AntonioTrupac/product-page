@@ -1,0 +1,23 @@
+@import '../styles/variables.scss';
+
+.wrapper {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.625rem;
+    }
+  }
+
+  .thumbnail {
+    border-radius: 0.25rem;
+  }
+}

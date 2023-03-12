@@ -2,6 +2,7 @@ import { useCartStore } from '@/store/cart';
 import classes from './Popover.module.scss';
 import { LineBreak } from '@/components';
 import classNames from 'classnames';
+import CartItem from '../CartItem';
 
 const Popover = () => {
   const store = useCartStore();
@@ -23,7 +24,14 @@ const Popover = () => {
         }
       >
         {store.items.length > 0 ? (
-          store.items.map((item) => <div key={item.id}>{store.total}</div>)
+          store.items.map((item) => (
+            <CartItem
+              key={item.id}
+              item={item}
+              quantity={store.quantity}
+              total={store.total}
+            />
+          ))
         ) : (
           <p>Your cart is empty</p>
         )}

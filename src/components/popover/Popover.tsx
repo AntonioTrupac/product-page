@@ -30,6 +30,7 @@ const Popover = () => {
               item={item}
               quantity={store.quantity}
               total={store.total}
+              clearCart={store.clearCart}
             />
           ))
         ) : (

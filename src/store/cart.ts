@@ -44,6 +44,9 @@ export const useCartStore = create<CartState>((set) => ({
       };
     });
   },
+  // Not used in this example, but if there was more items available
+  // we could use this to remove a single item from the cart by passing
+  // the id of the item to remove.
   removeItem: (id) => {
     set((state) => {
       const items = [...state.items];

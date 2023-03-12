@@ -7,17 +7,24 @@ interface CartItemProps {
   item: CartItem;
   quantity: number;
   total: number;
+  clearCart: () => void;
 }
 
-const CartItem = ({ item, quantity, total }: CartItemProps) => {
+const CartItem = ({ item, quantity, total, clearCart }: CartItemProps) => {
+  console.log(item);
+
+  const handleDelete = () => {
+    clearCart();
+  };
+
   return (
     <div className={classes.wrapper}>
-      <div style={{ display: 'flex' }}>
+      <div>
         <Image
           src='/images/image-product-1-thumbnail.jpg'
           alt='product 1'
           width={50}
-          height={50}
+          height={49}
           className={classes.thumbnail}
         />
 
@@ -31,10 +38,15 @@ const CartItem = ({ item, quantity, total }: CartItemProps) => {
           </div>
         </div>
 
-        <button onClick={() => console.log('console')}>
+        <button
+          className={classes['wrapper__delete-button']}
+          onClick={handleDelete}
+        >
           <Delete />
         </button>
       </div>
+
+      <button className={classes['wrapper__checkout-button']}>Checkout</button>
     </div>
   );
 };

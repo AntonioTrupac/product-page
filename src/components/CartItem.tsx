@@ -1,6 +1,7 @@
 import { CartItem } from '@/store/cart';
 import classes from './CartItem.module.scss';
 import Image from 'next/image';
+import { Delete } from './icons';
 
 interface CartItemProps {
   item: CartItem;
@@ -23,11 +24,16 @@ const CartItem = ({ item, quantity, total }: CartItemProps) => {
         <div className={classes['wrapper__content']}>
           <h3 className={classes['wrapper__content-title']}>{item.name}</h3>
           <div className={classes['wrapper__content-price']}>
-            <p>${item.discountedPrice}</p>
-            <p>{quantity}</p>
-            <p>{total}</p>
+            <p className={classes.discount}>
+              ${item.discountedPrice.toFixed(2)} x {quantity}
+            </p>
+            <p className={classes.total}>${total.toFixed(2)}</p>
           </div>
         </div>
+
+        <button onClick={() => console.log('console')}>
+          <Delete />
+        </button>
       </div>
     </div>
   );

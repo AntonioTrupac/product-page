@@ -2,12 +2,16 @@
 
 .container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 90px auto;
   gap: 7.8rem;
 
   @media screen and (min-width: 1024px) {
+    flex-direction: row;
     max-width: 1100px;
     padding-inline: 3rem;
+    align-items: normal;
   }
 
   @media screen and (min-width: 1441px) {

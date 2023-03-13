@@ -6,7 +6,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Navbar />
       <LineBreak />
-      <main>{children}</main>
+      {children}
     </>
   );
 };

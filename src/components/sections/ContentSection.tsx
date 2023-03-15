@@ -56,7 +56,7 @@ const ContentSection = () => {
 
   return (
     <section className={classes.wrapper}>
-      <h1 className=''>Sneaker company</h1>
+      <h1>Sneaker company</h1>
 
       <p className={classes['wrapper__title']}>Fall limited edition sneakers</p>
 

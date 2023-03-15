@@ -6,11 +6,14 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding-inline: 0;
-  padding-top: 2.75rem;
-  padding-bottom: 3rem;
+  padding-inline: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.25rem;
 
   @media screen and (min-width: 1024px) {
+    padding-inline: 0;
+    padding-top: 2.75rem;
+    padding-bottom: 3rem;
     max-width: 1100px;
   }
 
@@ -20,11 +23,13 @@
 
   .menu-button {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
+    color: $neutral-dark-grayish;
     background-color: transparent;
     border: none;
-    
+    margin-right: 1rem;
+    padding: 0;
+
     @media screen and (min-width: 1024px) {
       display: none;
     }
@@ -78,12 +83,14 @@
     width: 100%;
     height: 100vh;
     background-color: $line-color;
+    z-index: 999;
 
     &__list {
       margin: 0;
       width: 75%;
       height: 100vh;
       background-color: $primary-orange;
+      z-index: 1000;
     }
 
     @media screen and (min-width: 1024px) {
@@ -96,8 +103,25 @@
     align-items: center;
     position: relative;
 
+    .avatar-desktop {
+      display: none;
+
+      @media screen and (min-width: 1024px) {
+        display: block;
+      }
+    }
+
+    .avatar-mobile {
+      display: block;
+
+      @media screen and (min-width: 1024px) {
+        display: none;
+      }
+    }
+
     .cart-button {
-      margin-right: 3rem;
+      margin-right: 1.5rem;
+      padding: 0;
       background-color: transparent;
       border: none;
       cursor: pointer;

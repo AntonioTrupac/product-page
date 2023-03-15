@@ -3,7 +3,13 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin: 3.875rem 0;
+  margin: 1.5rem 0;
+  padding: 0 1.5rem;
+
+  @media screen and (min-width: 1024px) {
+    margin: 3.875rem 0;
+    padding: 0;
+  }
 
   h1 {
     font-size: 0.8rem;

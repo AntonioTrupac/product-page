@@ -113,6 +113,15 @@ const Navbar = () => {
           width={50}
           src='/images/image-avatar.png'
           alt='avatar'
+          className={classes['avatar-desktop']}
+        />
+
+        <Image
+          height={24}
+          width={24}
+          src='/images/image-avatar.png'
+          alt='avatar'
+          className={classes['avatar-mobile']}
         />
 
         {popoverStore.isOpen && <Popover />}

@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+
+.wrapper {
+  
+  &__image-container {
+    position: relative;
+    display: flex;  
+    aspect-ratio: 1.25;
+    width: 375px;
+    
+
+    @media screen and (min-width: 600px) and (max-width: 1023px) {
+      width: 750px;
+      aspect-ratio: 1.5;
+    }
+  }
+
+  &__image-previous {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    top: 45%;
+    left: 1rem;
+
+    border: none;
+    border-radius: 50%;
+    padding-inline: .9rem;
+    padding-block: 0.65rem;
+    background-color: $neutral-white;
+
+    &:hover, :active, :focus {
+      background-color: $neutral-light-grayish;
+      color: $primary-orange
+    }
+  }
+
+  &__image-next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 10;
+
+    position: absolute;
+    top: 45%;
+    right: 1rem;
+
+    border: none;
+    border-radius: 50%;
+    padding-inline: .9rem;
+    padding-block: 0.65rem;
+    background-color: $neutral-white;
+
+    &:hover, :active, :focus {
+      background-color: $neutral-light-grayish;
+      color: $primary-orange
+    }
+  }
+}

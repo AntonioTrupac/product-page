@@ -1,4 +1,4 @@
-import { ImageSection, ContentSection } from '@/components';
+import { ImageSection, ContentSection, MobileImageSection } from '@/components';
 import { images } from '../data/images';
 import classes from './Index.module.scss';
 import Head from 'next/head';
@@ -15,6 +15,7 @@ export default function Home() {
 
       <section className={classes.container}>
         <ImageSection images={images} />
+        <MobileImageSection images={images} />
         <ContentSection />
       </section>
     </>

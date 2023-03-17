@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from 'react';
 import classes from './MobileImageSection.module.scss';
 import Image from 'next/image';
@@ -37,28 +38,27 @@ const MobileImageSection = ({ images }: MobileImageSectionProps) => {
   };
 
   return (
-    <section className={classes.wrapper}>
-      <div className={classes['wrapper__image-container']}>
-        <Image
-          src={images[imageId - 1].src}
-          alt={images[imageId - 1].alt}
-          fill
-        />
+    <div className={classes['wrapper__image-container']}>
+      <Image
+        fill
+        src={images[imageId - 1].src}
+        alt={images[imageId - 1].alt}
+        className={classes['wrapper__image']}
+      />
 
-        <button
-          className={classes['wrapper__image-previous']}
-          onClick={handlePreviousImage}
-        >
-          <Previous />
-        </button>
-        <button
-          className={classes['wrapper__image-next']}
-          onClick={handleNextImage}
-        >
-          <Next />
-        </button>
-      </div>
-    </section>
+      <button
+        className={classes['wrapper__image-previous']}
+        onClick={handlePreviousImage}
+      >
+        <Previous />
+      </button>
+      <button
+        className={classes['wrapper__image-next']}
+        onClick={handleNextImage}
+      >
+        <Next />
+      </button>
+    </div>
   );
 };
 

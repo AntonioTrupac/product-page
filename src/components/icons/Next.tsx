@@ -13,7 +13,7 @@ const Next = ({
       <path
         d='m2 1 8 8-8 8'
         stroke='currentColor'
-        stroke-width='3'
+        strokeWidth='3'
         fill='none'
         fill-rule='evenodd'
       />

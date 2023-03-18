@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { usePopoverStore } from '@/store/popover';
 import { Popover } from '@/components';
 import { useState } from 'react';
+import { useCartStore } from '@/store/cart';
 const kumbh = Kumbh_Sans({ subsets: ['latin'] });
 
 const MobileNavigation = () => {
@@ -50,6 +51,7 @@ const MobileNavigation = () => {
 
 const Navbar = () => {
   const popoverStore = usePopoverStore();
+  const cartStore = useCartStore();
   const [open, setOpen] = useState(false);
 
   return (
@@ -105,7 +107,14 @@ const Navbar = () => {
           className={classes['cart-button']}
           onClick={() => popoverStore.open()}
         >
-          <Cart width={22} height={20} className={classes['cart-icon']} />
+          <div className={classes['cart-button__container']}>
+            <Cart width={22} height={20} className={classes['cart-icon']} />
+            {cartStore.quantity > 0 && (
+              <span className={classes['cart-count-circle']}>
+                {cartStore.quantity}
+              </span>
+            )}
+          </div>
         </button>
 
         <Image

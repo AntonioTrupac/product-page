@@ -34,6 +34,7 @@
     letter-spacing: 0;
     line-height: 2rem;
     font-weight: 700;
+    margin-bottom: 1rem;
 
     margin-top: 0;
     text-transform: capitalize;
@@ -42,11 +43,12 @@
       font-size: 2.75rem;
       letter-spacing: 0;
       line-height: 3rem;
+      margin-bottom: 2rem;
     }
   }
 
   &__description {
-    font-size: 1rem;
+    font-size: 0.9375rem;
     letter-spacing: 0;
     line-height: 1.625rem;
     letter-spacing: 0;
@@ -54,14 +56,37 @@
 
     color: $neutral-dark-grayish;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 1rem;
+      letter-spacing: 0;
+      line-height: 1.625rem;
+      letter-spacing: 0;
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__pricing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items : flex-start;
+    }
+
     .discount-pricing-container {
       display: flex;
       align-items: center;
-      margin-bottom: 0.625rem;
+      margin-bottom: 0;
+
+      @media screen and (min-width: 1024px) {
+        margin-bottom: 0.625rem;  
+      }
 
       &__discounted {
         font-size: 1.75rem;
@@ -107,7 +132,12 @@
 
   &__buttons {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     margin-top: 2rem;
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
   }
 }

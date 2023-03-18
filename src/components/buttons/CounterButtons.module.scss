@@ -2,6 +2,7 @@
 
 .counter-wrapper {
   display: inline-flex;
+  justify-content: space-between;
   align-items: center;
   background-color: $neutral-light-grayish;
   padding-inline: 1rem;
@@ -35,6 +36,8 @@
   }
 
   &__count {
+    display: flex;
+    justify-content: center;
     font-size: 1rem;
     letter-spacing: 0;
     line-height: 1.625rem;

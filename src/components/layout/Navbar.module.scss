@@ -101,7 +101,6 @@
   .info {
     display: flex;
     align-items: center;
-    position: relative;
 
     .avatar-desktop {
       display: none;
@@ -124,6 +123,7 @@
       padding: 0;
       background-color: transparent;
       border: none;
+      position: relative;
       cursor: pointer;
     
       &__container {

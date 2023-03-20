@@ -7,52 +7,32 @@ import { Kumbh_Sans } from 'next/font/google';
 import classNames from 'classnames';
 import { usePopoverStore } from '@/store/popover';
 import { Popover } from '@/components';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCartStore } from '@/store/cart';
+import MobileNavigation from './MobileNavigation';
 const kumbh = Kumbh_Sans({ subsets: ['latin'] });
 
-const MobileNavigation = () => {
-  return (
-    <nav className={classes['mobile-navigation']}>
-      <ul className={classes['mobile-navigation__list']}>
-        <li className={classes['mobile-navigation__item']}>
-          <Link className={classes['mobile-navigation__link']} href='#'>
-            Collections
-          </Link>
-        </li>
-
-        <li className={classes['mobile-navigation__item']}>
-          <Link className={classes['mobile-navigation__link']} href='#'>
-            Men
-          </Link>
-        </li>
-
-        <li className={classes['mobile-navigation__item']}>
-          <Link className={classes['mobile-navigation__link']} href='#'>
-            Women
-          </Link>
-        </li>
-
-        <li className={classes['mobile-navigation__item']}>
-          <Link className={classes['mobile-navigation__link']} href='#'>
-            About
-          </Link>
-        </li>
-
-        <li className={classes['mobile-navigation__item']}>
-          <Link className={classes['mobile-navigation__link']} href='#'>
-            Contact
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  );
-};
+function debounce(
+  fn: (...args: any[]) => void,
+  wait: number
+): (...args: any[]) => void {
+  let timeout: ReturnType<typeof setTimeout> | null;
+  return (...args: any[]) => {
+    const later = () => {
+      clearTimeout(timeout!);
+      fn(...args);
+    };
+    clearTimeout(timeout!);
+    timeout = setTimeout(later, wait);
+  };
+}
 
 const Navbar = () => {
   const popoverStore = usePopoverStore();
   const cartStore = useCartStore();
   const [open, setOpen] = useState(false);
+  const cartButtonRef = useRef<HTMLButtonElement>(null);
+  const cartRefPopover = useRef<HTMLDivElement>(null);
 
   return (
     <header className={classNames([classes.container, kumbh.className])}>
@@ -106,6 +86,7 @@ const Navbar = () => {
         <button
           className={classes['cart-button']}
           onClick={() => popoverStore.open()}
+          ref={cartButtonRef}
         >
           <div className={classes['cart-button__container']}>
             <Cart width={22} height={20} className={classes['cart-icon']} />
@@ -133,7 +114,7 @@ const Navbar = () => {
           className={classes['avatar-mobile']}
         />
 
-        {popoverStore.isOpen && <Popover />}
+        {popoverStore.isOpen && <Popover ref={cartRefPopover} />}
       </div>
     </header>
   );

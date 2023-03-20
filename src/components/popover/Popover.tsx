@@ -3,12 +3,13 @@ import classes from './Popover.module.scss';
 import { LineBreak } from '@/components';
 import classNames from 'classnames';
 import CartItem from '../CartItem';
+import React from 'react';
 
-const Popover = () => {
+const Popover = React.forwardRef<HTMLDivElement>((_, ref) => {
   const store = useCartStore();
 
   return (
-    <div className={classes.wrapper}>
+    <div ref={ref} className={classes.wrapper}>
       <h1 className={classes['wrapper__title']}>Cart</h1>
 
       <LineBreak />
@@ -39,6 +40,8 @@ const Popover = () => {
       </div>
     </div>
   );
-};
+});
+
+Popover.displayName = 'Popover';
 
 export default Popover;

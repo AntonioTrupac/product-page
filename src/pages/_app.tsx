@@ -8,10 +8,13 @@ const kumbh = Kumbh_Sans({ subsets: ['latin'] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <main className={kumbh.className}>
-        <Component {...pageProps} />
-      </main>
-    </Layout>
+    <>
+      <Layout>
+        <main className={kumbh.className}>
+          <Component {...pageProps} />
+        </main>
+      </Layout>
+      <div id='modal-root' />
+    </>
   );
 }

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import classes from './ImageSection.module.scss';
 import Image from 'next/image';
+import { ImageModal } from '../modals';
+import Modal from '../modals/Modal';
 
 type Image = {
   id: number;
@@ -14,15 +16,24 @@ interface ImageSectionProps {
 
 const ImageSection = ({ images }: ImageSectionProps) => {
   const [imageId, setImageId] = useState(images[0].id);
+  const [open, setOpen] = useState(false);
 
   const mainImage = images.find((image) => image.id === imageId);
-
   return (
     <section className={classes.wrapper}>
       {mainImage && (
-        <div className={classes['wrapper__main-image']}>
+        <button
+          className={classes['wrapper__main-image-button']}
+          onClick={() => setOpen(true)}
+        >
           <Image src={mainImage.src} width={445} height={445} alt='' />
-        </div>
+        </button>
+      )}
+
+      {open && (
+        <Modal isOpen={open} onClose={() => setOpen(false)}>
+          <ImageModal images={images} />
+        </Modal>
       )}
 
       <div className={classes['wrapper__switch-image']}>

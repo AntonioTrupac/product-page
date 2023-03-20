@@ -1,24 +1,19 @@
-@import "../../styles/variables";
+@import "~@/styles/variables.scss";
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
+.image-modal {
+ 
 
-  &__main-image-button {
-    display: none;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-
-    @media screen and (min-width: 1024px) {
-      display: flex;
-      border-radius: 15px;
-
-      > img {
-        border-radius: 15px;
-      }   
-    }
+  .close-button {
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // padding: 1rem;
+    // cursor: pointer;
+    // background-color: transparent;
+    // border: none;
+    // outline: none;
   }
+  
 
   &__switch-image {
     display: none;

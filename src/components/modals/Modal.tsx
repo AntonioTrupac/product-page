@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import classes from './Modal.module.scss';
+import { Close } from '../icons';
 
 interface ModalProps {
   children: React.ReactNode;
@@ -40,9 +42,16 @@ const Modal = ({ children, isOpen, onClose }: ModalProps) => {
         justifyContent: 'center',
         zIndex: 1000,
       }}
-      onClick={onClose}
     >
-      <div onClick={(e) => e.stopPropagation()}>{children}</div>
+      <div>
+        <div className={classes['button-container']}>
+          <button className={classes['close-button']} onClick={onClose}>
+            <Close />
+          </button>
+        </div>
+
+        <div className={classes['modal-children']}>{children}</div>
+      </div>
     </div>
   );
 

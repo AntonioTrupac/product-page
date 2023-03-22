@@ -1,64 +1,76 @@
-@import "~@/styles/variables.scss";
+@import '~@/styles/variables.scss';
 
-.image-modal {
- 
-
-  .close-button {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    // padding: 1rem;
-    // cursor: pointer;
-    // background-color: transparent;
-    // border: none;
-    // outline: none;
+.main-image-button {
+  img {
+    border-radius: 0.9375rem;
   }
-  
+}
 
-  &__switch-image {
-    display: none;
+.switch-image {
+  display: none;
 
-    @media screen and (min-width: 1024px) {
-      margin-top: 2rem;
-      display: flex;
+  @media screen and (min-width: 1024px) {
+    margin-top: 2.25rem;
+    display: flex;
+    gap: 1.25rem;
 
-      .image-button {
-        display: inline-flex;
-        justify-content: center;
-        cursor: pointer;
+    .image-button {
+      display: inline-flex;
+      justify-content: center;
+      cursor: pointer;
+      border: 2px solid transparent;
+      background-color: transparent;
+
+      padding: 0;
+
+      border-radius: 0.625rem;
+      width: 5.5rem;
+      height: 5.5rem;
+
+      &:hover,
+      &:focus {
         border: 2px solid transparent;
-        background-color: transparent;
-        padding: 0;
-        margin-right: 1.91rem;
+        outline: transparent;
+
+        .image-wrapper {
+          border: 2px solid $primary-orange;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border: 2px solid transparent;
         border-radius: 10px;
         width: 88px;
         height: 88px;
+        overflow: hidden;
 
-        &:hover,
-        &:focus {
-          border: 2px solid transparent;
-          outline: transparent;
+        &.active-image {
+          border-color: $primary-orange;
 
-          img {
-            border: 2px solid $primary-orange;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 1;
           }
         }
+      }
 
-        &:last-child {
-          margin-right: 0;
-        }
-
-        & .active-image {
-          opacity: 0.7;
-          border: 2px solid $primary-orange;
-        }
-
-        img {
-          border: 2px solid transparent;
-          border-radius: 10px;
-          width: 88px;
-          height: 88px;
-        }
+      img {
+        max-width: 100%;
+        max-height: 100%;
       }
     }
   }

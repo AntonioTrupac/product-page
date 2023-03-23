@@ -1,1 +1,0 @@
-- Rework button (CartButton) component so it takes children as props, since there are a couple of IconButton components in the project

@@ -40,6 +40,7 @@ const Navbar = () => {
         <button
           onClick={() => setOpen(!open)}
           className={classes['menu-button']}
+          aria-label='menu'
         >
           <Menu />
         </button>
@@ -86,6 +87,7 @@ const Navbar = () => {
         <button
           className={classes['cart-button']}
           onClick={() => popoverStore.open()}
+          aria-label='cart'
           ref={cartButtonRef}
         >
           <div className={classes['cart-button__container']}>

@@ -40,13 +40,19 @@ const CartItem = ({ item, quantity, total, clearCart }: CartItemProps) => {
 
         <button
           className={classes['wrapper__delete-button']}
+          aria-label='delete from cart'
           onClick={handleDelete}
         >
           <Delete />
         </button>
       </div>
 
-      <button className={classes['wrapper__checkout-button']}>Checkout</button>
+      <button
+        className={classes['wrapper__checkout-button']}
+        aria-label='checkout'
+      >
+        Checkout
+      </button>
     </div>
   );
 };

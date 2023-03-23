@@ -49,11 +49,13 @@ const MobileImageSection = ({ images }: MobileImageSectionProps) => {
       <button
         className={classes['wrapper__image-previous']}
         onClick={handlePreviousImage}
+        aria-label='previous image'
       >
         <Previous />
       </button>
       <button
         className={classes['wrapper__image-next']}
+        aria-label='next image'
         onClick={handleNextImage}
       >
         <Next />

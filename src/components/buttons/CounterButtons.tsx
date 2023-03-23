@@ -16,6 +16,7 @@ const CounterButtons = ({
     <div className={classes['counter-wrapper']}>
       <button
         onClick={decrement}
+        aria-label='decrement'
         className={classes['counter-wrapper__decrement']}
       >
         <Decrement />
@@ -23,6 +24,7 @@ const CounterButtons = ({
       <span className={classes['counter-wrapper__count']}>{count}</span>
       <button
         onClick={increment}
+        aria-label='increment'
         className={classes['counter-wrapper__increment']}
       >
         <Increment />

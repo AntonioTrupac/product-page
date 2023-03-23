@@ -47,6 +47,7 @@ const ImageModal = ({ images }: ImageModalProps) => {
             className={classes.previous}
             type='button'
             onClick={handlePreviousImage}
+            aria-label='previous image'
           >
             <Previous />
           </button>
@@ -55,6 +56,7 @@ const ImageModal = ({ images }: ImageModalProps) => {
             className={classes.next}
             type='button'
             onClick={handleNextImage}
+            aria-label='next image'
           >
             <Next />
           </button>
@@ -67,6 +69,7 @@ const ImageModal = ({ images }: ImageModalProps) => {
             className={classes['image-button']}
             key={image.id}
             onClick={() => setImageId(image.id)}
+            aria-label='switch image'
           >
             <div
               className={classNames(classes['image-wrapper'], {

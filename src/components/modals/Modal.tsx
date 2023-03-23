@@ -45,7 +45,11 @@ const Modal = ({ children, isOpen, onClose }: ModalProps) => {
     >
       <div>
         <div className={classes['button-container']}>
-          <button className={classes['close-button']} onClick={onClose}>
+          <button
+            className={classes['close-button']}
+            aria-label='close modal'
+            onClick={onClose}
+          >
             <CloseModal />
           </button>
         </div>

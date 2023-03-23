@@ -24,6 +24,7 @@ const ImageSection = ({ images }: ImageSectionProps) => {
       {mainImage && (
         <button
           className={classes['wrapper__main-image-button']}
+          aria-label='open image modal'
           onClick={() => setOpen(true)}
         >
           <Image src={mainImage.src} width={445} height={445} alt='' />
@@ -42,6 +43,7 @@ const ImageSection = ({ images }: ImageSectionProps) => {
             className={classes['image-button']}
             key={image.id}
             onClick={() => setImageId(image.id)}
+            aria-label='switch image'
           >
             <Image
               className={image.id === imageId ? classes['active-image'] : ''}

@@ -7,25 +7,10 @@ import { Kumbh_Sans } from 'next/font/google';
 import classNames from 'classnames';
 import { usePopoverStore } from '@/store/popover';
 import { Popover } from '@/components';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useCartStore } from '@/store/cart';
 import MobileNavigation from './MobileNavigation';
 const kumbh = Kumbh_Sans({ subsets: ['latin'] });
-
-function debounce(
-  fn: (...args: any[]) => void,
-  wait: number
-): (...args: any[]) => void {
-  let timeout: ReturnType<typeof setTimeout> | null;
-  return (...args: any[]) => {
-    const later = () => {
-      clearTimeout(timeout!);
-      fn(...args);
-    };
-    clearTimeout(timeout!);
-    timeout = setTimeout(later, wait);
-  };
-}
 
 const Navbar = () => {
   const popoverStore = usePopoverStore();
@@ -44,7 +29,8 @@ const Navbar = () => {
         >
           <Menu />
         </button>
-        <Image src='/images/logo.svg' width={137.5} height={20} alt='logo' />
+
+        <Image src='/images/logo.svg' width={138} height={20} alt='logo' />
 
         <nav className={classes.navigation}>
           <ul className={classes['navigation__list']}>
@@ -90,14 +76,14 @@ const Navbar = () => {
           aria-label='cart'
           ref={cartButtonRef}
         >
-          <div className={classes['cart-button__container']}>
+          <span className={classes['cart-button__container']}>
             <Cart width={22} height={20} className={classes['cart-icon']} />
             {cartStore.quantity > 0 && (
               <span className={classes['cart-count-circle']}>
                 {cartStore.quantity}
               </span>
             )}
-          </div>
+          </span>
         </button>
 
         <Image

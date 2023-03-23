@@ -13,6 +13,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
+      <h1 className='sr-only'>Product page</h1>
+
       <section className={classes.container}>
         <ImageSection images={images} />
         <MobileImageSection images={images} />

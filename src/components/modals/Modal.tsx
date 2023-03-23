@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import classes from './Modal.module.scss';
-import { Close } from '../icons';
+import { CloseModal } from '../icons';
 
 interface ModalProps {
   children: React.ReactNode;
@@ -46,7 +46,7 @@ const Modal = ({ children, isOpen, onClose }: ModalProps) => {
       <div>
         <div className={classes['button-container']}>
           <button className={classes['close-button']} onClick={onClose}>
-            <Close />
+            <CloseModal />
           </button>
         </div>
 

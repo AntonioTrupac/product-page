@@ -13,7 +13,7 @@ const Menu = ({
       <path
         d='M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z'
         fill='currentColor'
-        fill-rule='evenodd'
+        fillRule='evenodd'
       />
     </svg>
   );

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import classes from './ImageModal.module.scss';
 import { useState } from 'react';
 import classNames from 'classnames';
+import { Next, Previous } from '../icons';
 
 interface ImageModalProps {
   images: {
@@ -16,11 +17,47 @@ const ImageModal = ({ images }: ImageModalProps) => {
 
   const mainImage = images.find((image) => image.id === imageId);
 
+  const handlePreviousImage = () => {
+    const previousImage = images.find((image) => image.id === imageId - 1);
+
+    if (previousImage) {
+      setImageId(previousImage.id);
+    } else {
+      setImageId(images[images.length - 1].id);
+    }
+  };
+
+  const handleNextImage = () => {
+    const nextImage = images.find((image) => image.id === imageId + 1);
+
+    if (nextImage) {
+      setImageId(nextImage.id);
+    } else {
+      setImageId(images[0].id);
+    }
+  };
+
   return (
     <>
       {mainImage && (
-        <div className={classes['main-image-button']}>
+        <div className={classes['main-image-container']}>
           <Image src={mainImage.src} width={550} height={550} alt='' />
+
+          <button
+            className={classes.previous}
+            type='button'
+            onClick={handlePreviousImage}
+          >
+            <Previous />
+          </button>
+
+          <button
+            className={classes.next}
+            type='button'
+            onClick={handleNextImage}
+          >
+            <Next />
+          </button>
         </div>
       )}
 

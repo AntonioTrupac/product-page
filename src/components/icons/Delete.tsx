@@ -17,7 +17,7 @@ const Delete = ({
           id='a'
         />
       </defs>
-      <use fill='currentColor' fill-rule='nonzero' xlinkHref='#a' />
+      <use fill='currentColor' fillRule='nonzero' xlinkHref='#a' />
     </svg>
   );
 };

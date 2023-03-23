@@ -6,3 +6,4 @@ export { default as Menu } from './Menu';
 export { default as Next } from './Next';
 export { default as Previous } from './Previous';
 export { default as Close } from './Close';
+export { default as CloseModal } from './CloseModal';

@@ -15,7 +15,7 @@ const Previous = ({
         stroke='currentColor'
         strokeWidth='3'
         fill='none'
-        fill-rule='evenodd'
+        fillRule='evenodd'
       />
     </svg>
   );
